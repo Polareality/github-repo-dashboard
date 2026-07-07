@@ -1,0 +1,298 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    background: #10141b;
+    color: #f8fafc;
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
+.top-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 28px 48px 36px;
+    border-bottom: 1px solid #252c38;
+}
+
+.eyebrow {
+    color: #f5b342;
+    font-size: 13px;
+    letter-spacing: 4px;
+    font-weight: 700;
+    margin-bottom: 18px;
+}
+
+h1 {
+    font-size: 38px;
+    letter-spacing: 1px;
+}
+
+.sync-info {
+    text-align: right;
+    color: #7f8ca3;
+}
+
+.sync-info strong {
+    display: block;
+    color: #a8b4cc;
+    margin-top: 8px;
+    font-weight: 500;
+}
+
+main {
+    padding: 48px;
+}
+
+.summary-row {
+    display: flex;
+    gap: 28px;
+    margin-bottom: 40px;
+}
+
+.summary-item {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    color: #a8b4cc;
+}
+
+.summary-item strong {
+    color: white;
+    font-size: 18px;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+
+.green {
+    background: #4ade80;
+}
+
+.yellow {
+    background: #f5b342;
+}
+
+.red {
+    background: #fb7185;
+}
+
+.repo-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(300px, 1fr));
+    gap: 24px;
+}
+
+.repo-card {
+    background: #171c25;
+    border: 1px solid #2b3342;
+    border-radius: 12px;
+    padding: 28px;
+    min-height: 320px;
+    position: relative;
+    overflow: hidden;
+}
+
+.repo-card::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 4px;
+    height: 100%;
+}
+
+.healthy-border::before {
+    background: #4ade80;
+}
+
+.warning-border::before {
+    background: #f5b342;
+}
+
+.critical-border::before {
+    background: #fb7185;
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    gap: 18px;
+    margin-bottom: 24px;
+}
+
+.card-header h2 {
+    font-size: 21px;
+    margin-bottom: 12px;
+}
+
+.card-header h2 span {
+    color: #64748b;
+    font-weight: 400;
+}
+
+.stars {
+    color: #b8c4dc;
+    font-size: 16px;
+}
+
+.stars::first-letter {
+    color: #f5b342;
+}
+
+.badge {
+    border-radius: 999px;
+    padding: 8px 14px;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    white-space: nowrap;
+    height: fit-content;
+}
+
+.badge.healthy {
+    background: rgba(74, 222, 128, 0.14);
+    color: #4ade80;
+}
+
+.badge.warning {
+    background: rgba(245, 179, 66, 0.16);
+    color: #f5b342;
+}
+
+.badge.critical {
+    background: rgba(251, 113, 133, 0.16);
+    color: #fb7185;
+}
+
+.metrics {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin-bottom: 28px;
+}
+
+.metric-box {
+    background: #1d2330;
+    border: 1px solid #2b3342;
+    border-radius: 9px;
+    padding: 16px;
+}
+
+.metric-box p {
+    color: #64748b;
+    font-size: 13px;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+
+.metric-box strong {
+    font-size: 20px;
+    margin-right: 12px;
+}
+
+.metric-box span {
+    color: #6b7890;
+    font-size: 13px;
+    margin-right: 14px;
+}
+
+.metric-box .muted {
+    color: #64748b;
+}
+
+.contributors {
+    border-top: 1px solid #2b3342;
+    padding-top: 20px;
+}
+
+.contributors > p {
+    color: #64748b;
+    font-size: 13px;
+    letter-spacing: 1px;
+    margin-bottom: 14px;
+}
+
+.avatar-row {
+    display: flex;
+    align-items: center;
+}
+
+.avatar-row span {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: #f5b342;
+    color: #10141b;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 800;
+    margin-left: -6px;
+}
+
+.avatar-row span:first-child {
+    margin-left: 0;
+}
+
+.avatar-row span:nth-child(2) {
+    background: #4ade80;
+}
+
+.avatar-row span:nth-child(3) {
+    background: #7aa2ff;
+}
+
+.avatar-row strong {
+    margin-left: 12px;
+    font-size: 14px;
+}
+
+.avatar-row small {
+    margin-left: 6px;
+    color: #9aaccc;
+    font-size: 14px;
+}
+
+@media (max-width: 1100px) {
+    .repo-grid {
+        grid-template-columns: repeat(2, minmax(300px, 1fr));
+    }
+}
+
+@media (max-width: 760px) {
+    .top-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 22px;
+        padding: 28px;
+    }
+
+    .sync-info {
+        text-align: left;
+    }
+
+    main {
+        padding: 28px;
+    }
+
+    .summary-row {
+        flex-wrap: wrap;
+    }
+
+    .repo-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .card-header {
+        flex-direction: column;
+    }
+}
