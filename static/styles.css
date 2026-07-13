@@ -296,3 +296,42 @@ main {
         flex-direction: column;
     }
 }
+.subtitle {
+    color: #a8b4cc;
+    margin-top: 10px;
+}
+
+.status-message {
+    color: #a8b4cc;
+    margin-bottom: 24px;
+    font-size: 16px;
+}
+
+.repo-link {
+    display: inline-block;
+    color: #7aa2ff;
+    margin-top: 8px;
+    text-decoration: none;
+}
+
+.repo-link:hover {
+    text-decoration: underline;
+}
+
+.error-message {
+    color: #fb7185;
+}
+
+.contributors ul {
+    list-style: none;
+    line-height: 1.8;
+}
+
+.contributors a {
+    color: #f5b342;
+    text-decoration: none;
+}
+
+.contributors a:hover {
+    text-decoration: underline;
+}

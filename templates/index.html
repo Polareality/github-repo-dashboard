@@ -3,237 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Repo Pulse</title>
+    <title>GitHub Repo Health Dashboard</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
     <header class="top-header">
         <div>
-            <p class="eyebrow">● LIVE MONITORING</p>
-            <h1>Repo Pulse</h1>
-        </div>
-
-        <div class="sync-info">
-            <p>Last synced</p>
-            <strong>Jul 07, 2026 — 09:14 UTC</strong>
+            <p class="eyebrow">LIVE GITHUB MONITORING</p>
+            <h1>GitHub Repo Health Dashboard</h1>
+            <p class="subtitle">Trending repositories created in the last two weeks.</p>
         </div>
     </header>
 
     <main>
-        <section class="summary-row">
-            <div class="summary-item">
-                <span class="dot green"></span>
-                <strong>3</strong>
-                <p>healthy</p>
-            </div>
+        <p id="status-message" class="status-message">Loading...</p>
 
-            <div class="summary-item">
-                <span class="dot yellow"></span>
-                <strong>1</strong>
-                <p>needs attention</p>
-            </div>
-
-            <div class="summary-item">
-                <span class="dot red"></span>
-                <strong>1</strong>
-                <p>critical</p>
-            </div>
-        </section>
-
-        <section class="repo-grid">
-            <article class="repo-card healthy-border">
-                <div class="card-header">
-                    <div>
-                        <h2><span>vectorlite/</span>vectorlite</h2>
-                        <p class="stars">★ 14,208 stars</p>
-                    </div>
-                    <span class="badge healthy">● HEALTHY</span>
-                </div>
-
-                <div class="metrics">
-                    <div class="metric-box">
-                        <p>ISSUES</p>
-                        <strong>32</strong>
-                        <span>open</span>
-                        <strong class="muted">211</strong>
-                        <span>closed</span>
-                    </div>
-
-                    <div class="metric-box">
-                        <p>PULL REQUESTS</p>
-                        <strong>9</strong>
-                        <span>open</span>
-                        <strong class="muted">146</strong>
-                        <span>merged</span>
-                    </div>
-                </div>
-
-                <div class="contributors">
-                    <p>TOP CONTRIBUTORS</p>
-                    <div class="avatar-row">
-                        <span>RK</span>
-                        <span>MT</span>
-                        <span>JL</span>
-                        <strong>rkumar</strong>
-                        <small>+12 others</small>
-                    </div>
-                </div>
-            </article>
-
-            <article class="repo-card healthy-border">
-                <div class="card-header">
-                    <div>
-                        <h2><span>streamforge/</span>core</h2>
-                        <p class="stars">★ 9,754 stars</p>
-                    </div>
-                    <span class="badge healthy">● HEALTHY</span>
-                </div>
-
-                <div class="metrics">
-                    <div class="metric-box">
-                        <p>ISSUES</p>
-                        <strong>18</strong>
-                        <span>open</span>
-                        <strong class="muted">97</strong>
-                        <span>closed</span>
-                    </div>
-
-                    <div class="metric-box">
-                        <p>PULL REQUESTS</p>
-                        <strong>6</strong>
-                        <span>open</span>
-                        <strong class="muted">88</strong>
-                        <span>merged</span>
-                    </div>
-                </div>
-
-                <div class="contributors">
-                    <p>TOP CONTRIBUTORS</p>
-                    <div class="avatar-row">
-                        <span>AN</span>
-                        <span>SP</span>
-                        <span>DW</span>
-                        <strong>anair</strong>
-                        <small>+8 others</small>
-                    </div>
-                </div>
-            </article>
-
-            <article class="repo-card warning-border">
-                <div class="card-header">
-                    <div>
-                        <h2><span>pixelforge/</span>renderkit</h2>
-                        <p class="stars">★ 6,301 stars</p>
-                    </div>
-                    <span class="badge warning">● NEEDS ATTENTION</span>
-                </div>
-
-                <div class="metrics">
-                    <div class="metric-box">
-                        <p>ISSUES</p>
-                        <strong>64</strong>
-                        <span>open</span>
-                        <strong class="muted">40</strong>
-                        <span>closed</span>
-                    </div>
-
-                    <div class="metric-box">
-                        <p>PULL REQUESTS</p>
-                        <strong>21</strong>
-                        <span>open</span>
-                        <strong class="muted">33</strong>
-                        <span>merged</span>
-                    </div>
-                </div>
-
-                <div class="contributors">
-                    <p>TOP CONTRIBUTORS</p>
-                    <div class="avatar-row">
-                        <span>TC</span>
-                        <span>MG</span>
-                        <strong>tchen</strong>
-                        <small>+4 others</small>
-                    </div>
-                </div>
-            </article>
-
-            <article class="repo-card critical-border">
-                <div class="card-header">
-                    <div>
-                        <h2><span>quantumql/</span>quantumql</h2>
-                        <p class="stars">★ 5,842 stars</p>
-                    </div>
-                    <span class="badge critical">● CRITICAL</span>
-                </div>
-
-                <div class="metrics">
-                    <div class="metric-box">
-                        <p>ISSUES</p>
-                        <strong>142</strong>
-                        <span>open</span>
-                        <strong class="muted">18</strong>
-                        <span>closed</span>
-                    </div>
-
-                    <div class="metric-box">
-                        <p>PULL REQUESTS</p>
-                        <strong>37</strong>
-                        <span>open</span>
-                        <strong class="muted">9</strong>
-                        <span>merged</span>
-                    </div>
-                </div>
-
-                <div class="contributors">
-                    <p>TOP CONTRIBUTORS</p>
-                    <div class="avatar-row">
-                        <span>JV</span>
-                        <span>LP</span>
-                        <strong>jvale</strong>
-                        <small>+2 others</small>
-                    </div>
-                </div>
-            </article>
-
-            <article class="repo-card healthy-border">
-                <div class="card-header">
-                    <div>
-                        <h2><span>edgecache/</span>edgecache-rs</h2>
-                        <p class="stars">★ 4,975 stars</p>
-                    </div>
-                    <span class="badge healthy">● HEALTHY</span>
-                </div>
-
-                <div class="metrics">
-                    <div class="metric-box">
-                        <p>ISSUES</p>
-                        <strong>11</strong>
-                        <span>open</span>
-                        <strong class="muted">63</strong>
-                        <span>closed</span>
-                    </div>
-
-                    <div class="metric-box">
-                        <p>PULL REQUESTS</p>
-                        <strong>4</strong>
-                        <span>open</span>
-                        <strong class="muted">51</strong>
-                        <span>merged</span>
-                    </div>
-                </div>
-
-                <div class="contributors">
-                    <p>TOP CONTRIBUTORS</p>
-                    <div class="avatar-row">
-                        <span>NK</span>
-                        <span>RB</span>
-                        <span>HS</span>
-                        <strong>nkato</strong>
-                        <small>+6 others</small>
-                    </div>
-                </div>
-            </article>
-        </section>
+        <section id="repo-grid" class="repo-grid"></section>
     </main>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
 </html>
